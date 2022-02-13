@@ -17,10 +17,10 @@ sysctl -p
 iptables-restore < /root/nginx/iptables.rules
 
 # Install repo EPEL
-yum install epel-release
+yum -y install epel-release
 
 # Install Nginx
-yum install nginx
+yum -y install nginx
 
 # Backup nginx.conf
 mv /etc/nginx/nginx.conf{,.old}
