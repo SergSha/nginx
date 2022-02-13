@@ -36,5 +36,5 @@ systemctl start nginx
 systemctl enable nginx
 
 # Nginx status
-# systemctl status nginx
+systemctl status nginx
 
