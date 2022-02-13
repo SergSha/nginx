@@ -1,3 +1,12 @@
+# Rename host
+sudo hostnamectl set-hostname balancer
+
+# Restart host
+shutdown -r now
+
+# Enter with root
+sudo -i
+
 # Get IP address device enp0s3
 ip -br a
 
