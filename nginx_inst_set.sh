@@ -33,7 +33,8 @@ mv /etc/nginx/nginx.conf{,.old}
 
 # Copy nginx.conf, upstreams.conf from GitHub
 cp -f /root/nginx/nginx.conf /etc/nginx/
-cp -f /root/nginx/conf.d/upstreams.conf /etc/nginx/conf.d/
+cp -rf /root/nginx/conf.d /etc/nginx/
+cp -f /root/nginx/nginx_conf_upd.sh /etc/cron.daily/
 
 # Start Nginx
 systemctl start nginx
