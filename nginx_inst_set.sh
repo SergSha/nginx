@@ -19,6 +19,10 @@ ip -br a
 sysctl -w net.ipv4.ip_forward=1
 sysctl -p
 
+# Add ipv4_forward.conf into /etc/sysctl.d/ for 
+# start forward after next restart host
+cp -f /root/nginx/ipv4_forward.conf /etc/sysctl.d/
+
 # Apply iptables rules
 iptables-restore < /root/nginx/iptables.rules
 
