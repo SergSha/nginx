@@ -24,10 +24,10 @@ https://github.com/settings/keys
 yum -y install git
 
 # Connect to GitHub repo (nginx)
-git clone git@github.com:SergSha/nginx.git
+git clone git@github.com:SergSha/balancer.git
 
 # Make the file nginx_inst_set.sh execute
-chmod u+x /root/nginx/nginx_inst_set.sh
+chmod u+x /root/balancer/inst_set.sh
 
-# Start nginx_inst_set.sh
-/root/nginx/nginx_inst_set.sh
+# Start inst_set.sh
+/root/balancer/inst_set.sh
