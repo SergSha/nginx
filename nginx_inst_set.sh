@@ -21,10 +21,10 @@ sysctl -p
 
 # Add ipv4_forward.conf into /etc/sysctl.d/ for 
 # start forward after next restart host
-cp -f /root/nginx/ipv4_forward.conf /etc/sysctl.d/
+cp -f /root/balancer/ipv4_forward.conf /etc/sysctl.d/
 
 # Apply iptables rules
-iptables-restore < /root/nginx/iptables.rules
+iptables-restore < /root/balancer/iptables.rules
 
 # Install repo EPEL
 yum -y install epel-release
@@ -36,9 +36,9 @@ yum -y install nginx
 mv /etc/nginx/nginx.conf{,.old}
 
 # Copy nginx.conf, upstreams.conf from GitHub
-cp -f /root/nginx/nginx.conf /etc/nginx/
-cp -rf /root/nginx/conf.d /etc/nginx/
-cp -f /root/nginx/nginx_conf_upd.sh /etc/cron.daily/
+cp -f /root/balancer/nginx.conf /etc/nginx/
+cp -rf /root/balancer/conf.d /etc/nginx/
+cp -f /root/balancer/conf_upd.sh /etc/cron.daily/
 
 # Start Nginx
 systemctl start nginx
