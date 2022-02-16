@@ -6,7 +6,9 @@
 :POSTROUTING ACCEPT [2:104]
 -A PREROUTING -p tcp -m tcp --dport 2211 -j DNAT --to-destination 10.0.1.11:22
 -A PREROUTING -p tcp -m tcp --dport 2212 -j DNAT --to-destination 10.0.1.12:22
--A PREROUTING -p tcp -m tcp --dport 2213 -j DNAT --to-destination 10.0.1.13:22
+# -A PREROUTING -p tcp -m tcp --dport 2213 -j DNAT --to-destination 10.0.1.13:22
+-A PREROUTING -p tcp -m tcp --dport 2221 -j DNAT --to-destination 10.0.1.21:22
+-A PREROUTING -p tcp -m tcp --dport 2222 -j DNAT --to-destination 10.0.1.22:22
 -A POSTROUTING -o enp0s3 -j SNAT --to-source 192.168.43.32
 COMMIT
 # Completed on Wed Feb  9 20:59:24 2022
