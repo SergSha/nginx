@@ -9,6 +9,8 @@
 # -A PREROUTING -p tcp -m tcp --dport 2213 -j DNAT --to-destination 10.0.1.13:22
 -A PREROUTING -p tcp -m tcp --dport 2221 -j DNAT --to-destination 10.0.1.21:22
 -A PREROUTING -p tcp -m tcp --dport 9090 -j DNAT --to-destination 10.0.1.21:9090
+-A PREROUTING -p tcp -m tcp --dport 9100 -j DNAT --to-destination 10.0.1.21:9100
+-A PREROUTING -p tcp -m tcp --dport 3000 -j DNAT --to-destination 10.0.1.21:3000
 -A PREROUTING -p tcp -m tcp --dport 2222 -j DNAT --to-destination 10.0.1.22:22
 -A POSTROUTING -o enp0s3 -j SNAT --to-source 192.168.43.32
 COMMIT
