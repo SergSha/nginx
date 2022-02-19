@@ -11,7 +11,7 @@ systemctl disable firewalld
 systemctl stop firewalld
 
 # Add setting of second network device
-cp -f /root/nginx/ifcfg-enp0s8 /etc/sysconfig/network-scripts/
+cp -f /root/balancer/ifcfg-enp0s8 /etc/sysconfig/network-scripts/
 systemctl restart network
 ip -br a
 
