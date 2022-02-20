@@ -24,7 +24,13 @@ sysctl -p
 cp -f /root/balancer/ipv4_forward.conf /etc/sysctl.d/
 
 # Apply iptables rules
-iptables-restore < /root/balancer/iptables.rules
+cp -f /root/balancer/iptables-autostart.sh /usr/local/bin/
+cp -f /root/balancer/iptables-autostart.service /etc/systamd/system/
+systemctl daemon-reload
+systemctl start iptables-autostart.service
+systemctl enable iptables-autostart.service
+systemctl status iptables-autostart.service
+#iptables-restore < /root/balancer/iptables.rules
 
 # Install repo EPEL
 yum -y install epel-release

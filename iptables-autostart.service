@@ -1,0 +1,10 @@
+[Unit]
+Description=iptables-autostart
+Before=network.target
+
+[Service]
+Type=one-shot
+ExecStart=/usr/local/bin/iptables-autostart.sh
+
+[Install]
+WantedBy=multi-user.target
