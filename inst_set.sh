@@ -25,7 +25,7 @@ cp -f /root/balancer/ipv4_forward.conf /etc/sysctl.d/
 
 # Apply iptables rules
 cp -f /root/balancer/iptables-autostart.sh /usr/local/bin/
-cp -f /root/balancer/iptables-autostart.service /etc/systamd/system/
+cp -f /root/balancer/iptables-autostart.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl start iptables-autostart.service
 systemctl enable iptables-autostart.service
