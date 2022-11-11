@@ -1,37 +1,43 @@
-# balancer
-# Rename host
-sudo hostnamectl set-hostname balancer
+<h3>nginx balancer</h3>
 
-# Restart host
-shutdown -r now
+<p>Rename host:</p>
+<pre>sudo hostnamectl set-hostname balancer</pre>
 
-# Enter with root
-sudo -i
+<p>Restart host:</p>
+<pre>shutdown -r now</pre>
 
-# Get IP address device enp0s3
-ip -br a
+<p>Enter with root:</p>
+<pre>sudo -i</pre>
 
-# Set IP into iptables.rules in GitHub
--A POSTROUTING -o enp0s3 -j SNAT --to-source 192.168.0.99
+<p>Get IP address device enp0s3:</p>
+<pre>ip -br a</pre>
 
-# Install git
-yum -y install git
+<p>Set IP into iptables.rules in GitHub:</p>
+<pre>-A POSTROUTING -o enp0s3 -j SNAT --to-source 192.168.0.99</pre>
 
-# Connect to GitHub repo for download to host
-git clone https://github.com/SergSha/balancer.git
+<p>Install git:</p>
+<pre>yum -y install git</pre>
 
-#------- For to upload to GitHub -------------
-# Make pair keys
-#ssh-keygen #Enter-Enter-Enter
-# Copy text of pub key and paste into GitHub:
-#cat /root/.ssh/id_rsa.pub
-#https://github.com/settings/keys
-# Connect to GitHub repo (balancer)
-#git clone git@github.com:SergSha/balancer.git
-------------------------------------------------
+<p>Connect to GitHub repo for download to host:</p>
+<pre>git clone https://github.com/SergSha/balancer.git</pre>
 
-# Make the file inst_set.sh execute
-chmod u+x /root/balancer/inst_set.sh
+<p>================== For to upload to GitHub ==================</p>
+<p>Make pair keys</p>
+<pre>ssh-keygen
+Enter
+Enter
+Enter</pre>
 
-# Start inst_set.sh
-/root/balancer/inst_set.sh
+<p>Copy text of pub key and paste into GitHub:</p>
+<pre>cat /root/.ssh/id_rsa.pub</pre>
+<pre>https://github.com/settings/keys</pre>
+
+<p>Connect to GitHub repo (balancer):</p>
+<pre>git clone git@github.com:SergSha/balancer.git</pre>
+<p>====================================================</p>
+
+<p>Make the file inst_set.sh execute:</p>
+<pre>chmod u+x /root/balancer/inst_set.sh</pre>
+
+<p>Start inst_set.sh:</p>
+<pre>/root/balancer/inst_set.sh</pre>
